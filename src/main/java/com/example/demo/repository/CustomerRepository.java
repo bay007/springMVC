@@ -1,12 +1,16 @@
 package com.example.demo.repository;
 
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.model.Customer;
 
 @Repository
-public interface CustomerRepository extends JpaRepository<Customer, String>{
-      //public List<Customer> findByNombre(String name);
+public interface CustomerRepository extends CrudRepository <Customer, String>{
+      public List<Customer> findByNombre(String nombre);
+      public Customer findById(Integer id);
+      
  }

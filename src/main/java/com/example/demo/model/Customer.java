@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 
 
@@ -15,7 +16,8 @@ public class Customer {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
-
+    
+    @NotBlank(message = "Nombre no puede ir en blanco")
     private String nombre;
 
 
